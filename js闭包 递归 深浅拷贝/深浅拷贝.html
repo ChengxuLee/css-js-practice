@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:"lee",
+            age:10,
+            height:{
+                tu:520,
+            }
+        }
+        var o={};
+        function deepcopy(newobj,obj){
+            for(var k in obj){
+                var item=obj[k];//属性值赋值给item
+                if(item instanceof Array){
+                    newobj[k]=[];  //属性值判断 如果是数组继续递归
+                    deepcopy(newobj[k],item); //item 是原来的属性值
+                }else if(item instanceof Object)
+                {  newobj[k]={};  
+                deepcopy(newobj[k],item);
+                }
+                else{
+                    newobj[k]=item;
+                }
+            }
+        }
+        deepcopy(o,obj);
+        console.log(o);
+        //原来的方式
+        // for(var k in obj){
+
+        //     newobj[k]=obj[k];
+        // // }
+        // Object.assign(newobj,obj);
+        // obj.height.tu=555;
+        // console.log(newobj.height.tu);
+        // console.log(obj.height.tu);
+    </script>
+</body>
+</html>

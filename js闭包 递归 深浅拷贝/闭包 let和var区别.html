@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点我</button>
+    <button>点我</button>
+    <button>点我</button>
+    <script>
+      //函数声明三种方式
+      // function obj1(){console.log('111');};
+      // var obj2=function(){console.log('222')};
+      // var obj3=new Function('a','console.log("333")');
+      // obj1();
+      // obj2();
+      // obj3();
+      //call/bind/apply方法
+      //三者都是改变this的指向  call和apply 都是调用函数但是二者传参不同 一个是参数 一个是数组
+      //bind 不会调用函数 传参和call相同
+      // var button=document.querySelectorAll('button');
+      // for(var i=0;i<button.length;i++){
+      //     button[i].onclick=function(){
+      //       this.disabled=true;
+      //       setTimeout(function(){
+      //           this.disabled=false;
+      //       }.bind(this),2000);  //不需要调用函数
+      // }}
+        // 'use strict';
+      // (function(){
+      //严格模式  1、脚本  2、函数
+      // "use strict";
+      //1、不能使用未声明的变量
+      // b=2;
+      // console.log(b);
+      //2、变量   变量声明后 不能删除
+      // var a=1;
+      // delete a;
+      // console.log(a);
+      // })()
+      // function fn() {
+      //   console.log(this); // 严格模式下全局作用域中函数中的 this 是 undefined
+      // }
+      // fn();
+      //构造函数
+      function Star() {
+        this.sex = "男";
+      }
+      // Star();严格模式下,如果 构造函数不加new调用, this 指向的是undefined 如果给他赋值则 会报错.
+      var ldh = new Star();
+      console.log(ldh.sex);
+        //let和var——————————————————————————————————————
+      for (var i = 0; i < 5; i++) {
+        var i1 = 3;
+      }
+      i=9;
+      i1=9;
+      for (let w = 0; w < 5; w++) {
+        let w1 = 3;
+      }
+      w=9;
+      w1=9;
+      console.log(i);
+      console.log(i1);
+      console.log(w);
+      console.log(w1);
+     //闭包——————————————————————————————————————
+
+     function fn(){
+        var i=0;
+        return function(){
+            console.log(++i);
+          }
+      f1();
+     }
+
+     var o=fn();
+   o();  o();  o();  o();
+
+    function star(){};
+    var a=new star();
+    // console.log(a);
+    for(var i=0;i<5;i++){//第二执行 i->5
+      console.table(i); //先执行
+    }
+    
+    </script>
+  </body>
+</html>
