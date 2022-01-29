@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //正则表达式
+        var rg=/123/;  //只要包含123就是true
+        var rg1=/[123]/;  //只要包含123其中一个就是true
+        var rg2=/^[abc]$/; //必须是其中一个 才返回true
+        console.log(rg.test(1));
+        console.log(rg1.test(1));
+        console.log(rg2.test('a'));
+    </script>
+</body>
+</html>
