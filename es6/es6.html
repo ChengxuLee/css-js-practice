@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        箭头函数
+        const q= v => console.log(v);
+        q(10);
+        let arr=['张三','李四','王五'];
+        let [s1,...s2]=arr;
+        console.log(s1);
+        console.log(...s2);
+        var arr=[1,5,3,9,];
+        console.log(arr);
+        let link={
+            '0':'3',
+            '1':"2",
+           '2':"18",
+            length:9
+        }
+        console.log(link);
+        let co=Array.from(link,item=>item*2);
+        console.log(co);
+        var arr=[5,9,2,3,6,8,5];
+        var in1=arr.findIndex((index,value)=> value=8);
+        console.log(in1);
+        var arr=[5,9,2,3,6,8,5];
+        var in1=arr.includes(5);
+        console.log(in1);
+        //重复字符串
+        var c='xx'.repeat(2);
+            console.log(c);
+        //数组去重
+        var arr1=['a','b','a','b','a','a'];
+        var se1=new Set(['a','b','a','b','a','a']);
+        var se2=[...se1];
+            console.log(se1);
+            console.log(se2);
+    </script>
+  </body>
+</html>
