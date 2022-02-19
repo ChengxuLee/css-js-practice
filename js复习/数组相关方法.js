@@ -15,8 +15,8 @@ function arr(){
 }
 arr(1,2,3,4)
 
-数组增删改查
-slice 和 splice
+// 数组增删改查
+// slice 和 splice
 var a=[1,2,3,4,5];  
 console.log(a.slice(2));  //slice 左闭右开区间 创建新的数组
 console.log(a.slice(2,5));
