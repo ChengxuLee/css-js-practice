@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big{
+            width: 415px;
+            height: 400px;
+        }
+        .small>img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./ju.jpg" alt="" class="big">
+    </div>
+    <div class="small">
+        <img src="./ju.jpg" alt="">
+        <img src="./ying.jpg" alt="">
+        <img src="./hu.jpg" alt="">
+        <img src="./bu.jpg" alt="">
+    </div>
+
+    <script>
+    //    let imgs=document.querySelectorAll('img');
+    //    let big=document.querySelector('.big');
+    //    imgs.forEach(item=>{
+    //        item.addEventListener('click',function(){
+    //            big.src=this.src;
+    //        });
+    //    });
+    let imgs=document.querySelectorAll('img');
+       let big=document.querySelector('.big');
+       imgs.forEach(item=>{
+           item.addEventListener('click',()=>{
+               big.src=item.src;
+           });
+       });
+    </script>
+
+</body>
+</html>

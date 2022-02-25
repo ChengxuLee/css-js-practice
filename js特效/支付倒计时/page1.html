@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .confirm{
+            position: absolute;
+            left: 50%;
+            height: 340px;
+            width: 200px;
+            background-color: #eee;
+            padding: 20px;
+        }
+        .confirm p{
+            margin-bottom: 20px;
+        }
+        .confirm p:nth-child(5){
+            margin-bottom: 50px;
+        }
+        button{
+            margin-left: 30px;
+            margin-right:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirm">
+        <p>商品：Web前端课程</p>
+        <p>原价：1980元</p>
+        <p>现价：1.98元</p>
+        <p>内容：HTML、CSS、JS</p>
+        <p>地址：北京市朝阳区</p>
+        <button>取消</button>
+        <button>支付</button>
+    </div>
+
+    <script>
+        let btn=document.getElementsByTagName('button')[1];
+        btn.addEventListener('click',()=>{
+            let res=window.confirm('您是否要进行支付');
+            if(res){
+                location.href='./page2.html';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <form action="">
+        <p><input type="checkbox" name="" id="">尼古拉斯·赵四</p>
+        <p><input type="checkbox" name="" id="">莱昂纳多·刘能</p>
+        <p><input type="checkbox" name="" id="">约翰尼·宋小宝</p>
+        <p><input type="checkbox" name="" id="">布拉德·小沈阳</p>
+    </form>
+    <button class="Allselct">全选</button>
+    <button class="Noselct">全不选</button>
+    <button  class="Invert">反选</button>
+    <script>
+        let input=document.querySelectorAll('input');
+        let Allselct=document.querySelector('.Allselct');
+        let Noselct=document.querySelector('.Noselct');
+        let NoInvert=document.querySelector('.Invert');
+       //全选全不选
+       Allselct.addEventListener('click',()=>{
+          input.forEach(item=>item.checked='checked');
+       })
+       Noselct.addEventListener('click',()=>{
+          input.forEach(item=>item.checked='');
+       })
+       //反选
+       NoInvert.addEventListener('click',()=>{
+          input.forEach(item=>{
+              if(item.checked=='checked'){
+                item.checked='';
+              }else if(item.checked==''){
+                item.checked='checked'
+              }
+          });
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content{
+            width:500px;
+            margin:40px auto;
+        }
+        .search{
+            width: 400px;
+            overflow: hidden;
+            
+        }
+        .search input{
+            float: left;
+        }
+        #val{
+            height: 35px;
+            width: 300px;
+            padding-left: 10px;
+        }
+        #sub{
+            height: 40px;
+            width: 80px;
+            margin-left: 3px;
+            font-size: 20px;
+        }
+        .show{
+            width: 314px;
+            /* height: 300px; */
+            border: 1px solid #ccc;
+            border-bottom: 0;
+            /* display: none; */
+        }
+        .show p{
+            font-size: 15px;
+            border-bottom: 1px solid rgb(173, 173, 173);
+            padding: 5px 0 5px 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="search">
+            <input type="text" id="val" placeholder="请输入课程">
+            <input type="submit" id="sub">
+        </div>
+        <div class="show" id="show">
+        </div>
+    </div>
+    <script>
+    let arr = ['web前端精英特训班 980元','HTML核心技术 199元','CSS核心技术 299元','Vue核心技术 599元','CSS+HTML核心技术 299元','web前端在线商城 99元','JavaScript核心技术 399元','JavaScript高级技术 899元'];
+    let show=document.getElementById('show');
+    let val=document.getElementById('val');
+    val.addEventListener('blur',function(){
+        show.style.display='none';
+    });
+    val.addEventListener('keyup',function(){
+        show.innerHTML='';
+        if(val.value){ 
+            arr.forEach((item,index)=>{
+            if(item.includes(val.value)){ 
+                let create=document.createElement('p');
+                show.appendChild(create); 
+                //将匹配的字体变为红色
+                let index=item.indexOf(val.value); 
+                let len=item.length; 
+                let leng=val.value.length; 
+                //将下面内容分为三部分 0-index-1  index  index-length
+                let font=item.slice(0,index);
+                let rear=item.slice(index+leng,len);
+                // item ='web前端精英特训班 980元' 
+                create.innerHTML=font+`<span style="color:red">${val.value}</span>`+rear;  
+            }
+       
+          
+            
+            show.style.display='block';
+        });
+        if(show.innerHTML=='') {show.innerHTML=`<p>查询无果</p>`}
+           }else{
+            show.style.display='none';
+           }
+    });
+
+    </script>
+</body>
+</html>

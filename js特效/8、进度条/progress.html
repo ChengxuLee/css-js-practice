@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .fa{
+            width: 400px;
+            margin-bottom: 30px;
+            border: 1px solid red;;
+        }
+        .son{
+            width: 0px;
+            height: 40px;
+            background-color: #f0f;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fa">
+        <div class="son">
+            <span></span><span>%</span>
+        </div>
+    </div>
+    <button id="but">安装</button>
+    
+    <script>
+        let but = document.getElementById('but');
+        let son = document.querySelector('.son');
+        let span = document.getElementsByTagName('span');
+        let timer = null;
+        let num=0;
+ but.onclick=function(){
+    if(timer==null){
+      timer=setInterval(function(){
+           num++;
+           son.style.width=num+'px';
+           span[1].innerHTML=Math.ceil(num/400*100)+'%';
+           if(num==400){
+        clearInterval(timer);
+       }
+       },10)
+      
+ }
+ }
+       
+
+    </script>
+</body>
+</html>

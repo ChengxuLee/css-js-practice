@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-left: 100px;
+        }
+        div span{
+            font-size: 25px;
+            font-weight: 800;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h2>恭喜您，支付成功</h2>
+    <p><span>10</span>秒后自动返回首页</p>
+    <button>立即返回</button>
+    </div>
+
+    <script>
+        let succ=document.querySelector('span');
+       window.onload=function(){
+        
+        let count=10;
+        let star=setInterval(function(){
+            count--;
+            succ.innerHTML=count;
+            if(count==0){
+                    location.href = './page1.html';
+                }
+           
+        },1000);
+       }
+       document.querySelector('button').
+       addEventListener('click',()=>{ location.href = './page1.html';})
+    </script>
+</body>
+</html>

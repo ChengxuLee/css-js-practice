@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+
+        ul{
+            overflow: hidden;
+        }
+        li{
+            width: 100px;
+            height: 40px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        div{
+            width: 406px;
+            height: 406px;
+            border: 1px solid #ccc;
+        }
+        img{
+            width: 406px;
+            height: 406px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>大橘</li>
+        <li>英短</li>
+        <li>美短</li>
+        <li>布偶</li>
+    </ul>
+    <div>
+        <img src="./ju.jpg" alt="" style="display: block;">
+        <img src="./ying.jpg" alt="">
+        <img src="./hu.jpg" alt="">
+        <img src="./bu.jpg" alt="">
+    </div>
+    <script>
+    //选择谁的选项卡 则该选项卡的背景变色 并且图片显示
+    let lis=document.querySelectorAll('li');
+    let imgs=document.querySelectorAll('img');
+    lis.forEach((item,i)=> {
+        item.setAttribute('index',i);
+        item.addEventListener('mouseover',function(){
+            lis.forEach((item,k)=>{
+                item.style.backgroundColor='#eeeeee';
+                imgs[k].style.display='none';
+                });
+            item.style.backgroundColor='rgb(168, 168, 168)';
+            let index= item.getAttribute('index');
+            imgs[index].style.display='block';
+        });
+    });
+    </script>
+</body>
+</html>
