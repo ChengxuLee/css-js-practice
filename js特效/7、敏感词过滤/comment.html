@@ -11,10 +11,17 @@
             height: 200px;
             border:1px solid #ccc;
         }
+        #area{
+            width: 280px;
+            height: 150px;
+            resize:none; 
+        }
+   
     </style>
 </head>
 <body>
     <h2>敏感词过滤</h2>
+    <p>不得说出以下言论(妈的) | (滚) | (草)</p>
     <p>
         <textarea name="" id="area" cols="30" rows="10"></textarea>
     </p>
@@ -25,8 +32,14 @@
     <p id="res"></p>
 
     <script>
-      
-    
+        // 金三胖  妈的     使用*  替换
+        let reg=/(妈的)|(滚)|(草)/g;
+       let area=document.querySelector('#area');
+       let input=document.querySelector('#input');
+       let res=document.querySelector('#res');
+       input.addEventListener('click',()=>{
+        res.innerText=area.value.replace(reg,'**');
+       })
     </script>
 </body>
 </html>

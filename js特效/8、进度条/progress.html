@@ -23,31 +23,34 @@
 <body>
     <div class="fa">
         <div class="son">
-            <span></span><span>%</span>
+            <span>0</span><span>%</span>
         </div>
     </div>
     <button id="but">安装</button>
     
     <script>
+        // 逻辑：1.利用定时器来进行递增操作（width、百分数）
+        // 2.当变量 达到400px时，是停止定时器
         let but = document.getElementById('but');
-        let son = document.querySelector('.son');
+        let div = document.getElementsByTagName('div');
         let span = document.getElementsByTagName('span');
         let timer = null;
-        let num=0;
- but.onclick=function(){
-    if(timer==null){
-      timer=setInterval(function(){
-           num++;
-           son.style.width=num+'px';
-           span[1].innerHTML=Math.ceil(num/400*100)+'%';
-           if(num==400){
-        clearInterval(timer);
-       }
-       },10)
-      
- }
- }
-       
+        but.onclick = function(){
+            let num = 0;
+            if(timer==null){
+                timer = setInterval(()=>{
+                    num +=1;
+                    // 给宽进行递增
+                    div[1].style.width = num+'px';
+                    // 给百分比递增
+                    span[0].innerText = Math.ceil(num/400*100);
+                    if(num==400){
+                        clearInterval(timer);
+                    }
+                },10);
+            }
+            
+        }
 
     </script>
 </body>

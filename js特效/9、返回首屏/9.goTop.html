@@ -33,18 +33,24 @@
     </div>
 
     <script>
-        let goTop=document.querySelector('.goTop');
-      document.addEventListener('scroll',function(){
-          if(window.pageYOffset >400){
-            goTop.style.display='block';
-          }else{
-            goTop.style.display='none';
-          }
-      })
-      goTop.addEventListener('click',function(){
-        document.body.scrollTop=0;
-        document.documentElement.scrollTop = 0;
-      })
+        // 逻辑：1.当用户滑动滚动条 到达400px，返回按钮显示，反之小于400时 隐藏
+        // 2.点击 返回按钮 时 滚动条恢复原位   
+        // 让谁进行滚动 body  html
+        let goTop = document.getElementsByClassName('goTop')[0];
+        window.onscroll = function(){
+            let res = document.body.scrollTop || document.documentElement.scrollTop;
+            // console.log(res);
+            if(res >=400){
+                goTop.style.display = 'block';
+            }else{
+                goTop.style.display = 'none';
+            }
+        }
+        goTop.onclick = function(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
     </script>
 </body>
 </html>

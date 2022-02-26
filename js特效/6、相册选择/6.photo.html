@@ -28,20 +28,18 @@
     </div>
 
     <script>
-    //    let imgs=document.querySelectorAll('img');
-    //    let big=document.querySelector('.big');
-    //    imgs.forEach(item=>{
-    //        item.addEventListener('click',function(){
-    //            big.src=this.src;
-    //        });
-    //    });
-    let imgs=document.querySelectorAll('img');
-       let big=document.querySelector('.big');
-       imgs.forEach(item=>{
-           item.addEventListener('click',()=>{
-               big.src=item.src;
-           });
-       });
+        // 逻辑：本质上，把小图的src 赋值给 大图的src
+        // 图片元素.src = ''
+        let imgs = document.getElementsByTagName('img');
+
+        for(let i=1;i<imgs.length;i++){
+            imgs[i].onmouseover = function(){
+                // 把当前小图的src给 到大图src
+                imgs[0].src = this.src;
+            }
+        }
+
+
     </script>
 
 </body>
