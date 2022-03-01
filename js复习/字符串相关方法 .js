@@ -1,18 +1,18 @@
-// // let a='dd';
-// // let b=new String('cccdd');
-// // a.color='red';
-// // b.color='red';
-// // console.log(a.color); //不是对象 
-// // console.log(b.color);
-// // console.log(b.charAt(1));
-// // console.log(b.charCodeAt('C'));
-// // console.log(String.fromCharCode(189, 43, 190, 61));//静态 String.fromCharCode() 方法返回由指定的 UTF-16 代码单元序列创建的字符串。
-// // console.log(a.length);
-// // console.log(b.length);
-// // console.log(a.toString());
-// // console.log(b.toString());
-// // console.log(a.valueOf());
-// // console.log(b.valueOf());
+// let a='dd';
+// let b=new String('cccdd');
+// a.color='red';
+// b.color='red';
+// console.log(a.color); //不是对象 
+// console.log(b.color);
+// console.log(b.charAt(1));
+// console.log(b.charCodeAt('C'));
+// console.log(String.fromCharCode(189, 43, 190, 61));//静态 String.fromCharCode() 方法返回由指定的 UTF-16 代码单元序列创建的字符串。
+// console.log(a.length);
+// console.log(b.length);
+// console.log(a.toString());
+// console.log(b.toString());
+// console.log(a.valueOf());
+// console.log(b.valueOf());
 
 
 // //join split concat 
@@ -45,15 +45,15 @@
 // console.log(a1.slice(2,3));
 // console.log(str1okk.slice(2,3));
 
-// // substr substring slice区别 
-// //相同点 返回新字符串和concat一样 
-// // let stringValue = "hello world"; 
-// // console.log(stringValue.slice(-3)); // "rld" 
-// // console.log(stringValue.substring(-3)); // "hello world" 自动转换成0 
-// // console.log(stringValue.substr(-3)); // "rld" 
-// // console.log(stringValue.slice(3, -4)); // "lo w" 
-// // console.log(stringValue.substring(3, -4)); // "hel" 自动转换成0  
-// // console.log(stringValue.substr(3, -4)); // "" (empty string) 
+// substr substring slice区别 
+// 相同点 返回新字符串和concat一样 
+// let stringValue = "hello world"; 
+// console.log(stringValue.slice(-3)); // "rld" 
+// console.log(stringValue.substring(-3)); // "hello world" 自动转换成0 
+// console.log(stringValue.substr(-3)); // "rld" 
+// console.log(stringValue.slice(3, -4)); // "lo w" 
+// console.log(stringValue.substring(3, -4)); // "hel" 自动转换成0  
+// console.log(stringValue.substr(3, -4)); // "" (empty string) 
 
 //indexOf lastIndexOf 第二个参数代表跨过前面的
 // let stringValue = "hello world"; 
@@ -93,4 +93,4 @@
 // console.log("Your lucky numbers:");
 // for (var i = 0; i < array.length; i++) {
 //     console.log(array[i]);
-// }
+// }00``

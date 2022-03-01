@@ -139,7 +139,7 @@ console.log(e.splice(1,3)); //从下标为1开始删除3个元素
 var f=[1,5,6,7,8,9];
 console.log(f,f.splice(0,0,'s')); // 第三个位置为要添加的元素 ['s', 1, 5, 6, 7, 8, 9]  
 
-//查找 indexof lastidexof
+//查找 indexof lastIndexof
 var g=[1,5,6,7,8,9];
 console.log(g.indexOf(6));
 console.log(g.lastIndexOf(6)); //从后向前 返回值一样 
