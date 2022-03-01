@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/news.css" />
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/template-web.js"></script>
+  </head>
+  <body>
+    <div id="news-list"></div>
+    <script type="text/html" id="getL">
+      {{each data}}
+      <div class="news-item">
+        <img
+          class="thumb"
+          src="{{'http://www.liulongbin.top:3006'+$value.img}}"
+          alt=""
+        />
+        <div class="right-box">
+          <h1 class="title">{{$value.title}}</h1>
+          <div class="tags">
+            {{each $value.tags}}
+            <span>{{$value}}</span>
+            {{/each}}
+          </div>
+          <div class="footer">
+            <div>
+              <span>{{$value.source}}</span>&nbsp;&nbsp;
+              <span>{{$value.time|dateformat}}</span>
+            </div>
+            <span>评论数：{{$value.cmtcount}}</span>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+    <script>
+     (function(){
+      template.defaults.imports.dateformat=function(dtstr){
+        let str=new Date(dtstr);
+        let yy=str.getFullYear();
+        yy=yy<10?'0'+yy:yy;
+        let oo=str.getMonth();
+        oo=oo<10?'0'+oo:oo;
+        let dd=str.getDate();
+        dd=dd<10?'0'+dd:dd;
+        let hh=str.getHours();
+        hh=hh<10?'0'+hh:hh;
+        let mm=str.getMinutes();
+        mm=mm<10?'0'+mm:mm;
+        let ss=str.getSeconds();
+        ss=ss<10?'0'+ss:ss;
+
+        return yy+'-'+oo+'-'+dd+'-'+hh+'-'+mm+'-'+ss;
+    }
+     })()
+      function getList() {
+        $.get("http://www.liulongbin.top:3006/api/news", function (res) {
+          for (var i = 0; i < res.data.length; i++) {
+              res.data[i].tags = res.data[i].tags.split(",");
+            }
+          if (res.status == 200) {
+            var tem = template("getL", res);
+            $("#news-list").html(tem);
+          } else {
+            alert("数据获取失败");
+          }
+        });
+      }
+      getList();
+    </script>
+  </body>
+</html>

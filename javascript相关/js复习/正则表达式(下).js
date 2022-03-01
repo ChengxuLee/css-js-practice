@@ -20,7 +20,7 @@ console.dir(arr);
 // 有原子组生效整个原子组 
 let a='hddddd';
 let b='djdjkde';
-console.log(a.match(/hd+/));  //'hddddd'
+console.log(a.....(/hd+/));  //'hddddd'
 console.log(b.match(/(dj)+/));  //'djdj'
 
 // 网站用户名验证 
