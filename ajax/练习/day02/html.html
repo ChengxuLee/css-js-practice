@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+    <form id="form-1">
+        <input type="text"  autocomplete="off" name="uname">
+        <input type="password" name="upwd" id="">
+        <input type="submit" value="提交" name="usub">
+    </form>
+    <script>
+        
+//    let xhr=new XMLHttpRequest();
+//    xhr.open('GET','http://www.liulongbin.top:3006/api/getbooks');
+//     xhr.send();
+//     xhr.onreadystatechange=function(){
+//         if(xhr.readyState===4&&xhr.status===200){
+//             console.log(xhr.responseText);
+//         }
+//     }
+    //GET 本质以查询字符串的方式将对象内容追加到url地址后面
+//    $.ajax({ method: 'GET', url: 'url', data: {name: 'zs', age: 20}, success: function(res) { } })
+//    $.ajax({ method: 'GET', url: 'url?name=zs&age=20', success: function(res) { } });
+    //URL编码与解码
+    // let a=encodeURI('我是编码');
+    // console.log(a);//%E6%88%91%E6%98%AF%E7%BC%96%E7%A0%81
+    // console.log(decodeURI(a));//我是编码
+
+    // let xhr=new XMLHttpRequest();
+    // xhr.open('POST','http://www.liulongbin.top:3006/api/addbook');
+    // xhr.setRequestHeader('Content-Type','application/x-www-form-Urlencoded');
+    // xhr.send('bookname=水浒&author=施耐庵&publisher=天津图书出版社');
+    // xhr.onreadystatechange=function(){
+    //     if(xhr.readyState===4&&xhr.status===200){
+    //         console.log(xhr.responseText);
+    //     }
+    // }
+
+    //JSON和js转换
+    // let a={name:'1',age:2};
+    // console.log(JSON.stringify(a));
+    // console.log(JSON.parse('{"name":"1","age":2}'));//{name: '1', age: 2}
+   
+    //XMLhttpreqeust level2  设置超时时间和超时处理函数 timeout  
+    // let xhr=new XMLHttpRequest();
+    // xhr.timeout=30;
+    // //超时处理函数 timeout  
+    // xhr.ontimeout=function(){
+    //     alert('超时');
+    // }
+    // xhr.open('GET','http://www.liulongbin.top:3006/api/formdata');
+    // xhr.send();
+    // xhr.onreadystatechange=function(){
+
+    //     if(xhr.readystate===4&&xhr.status===200){
+    //         console.log(xhr.responseText);
+    //     }
+    // };
+
+
+    //FormData 对象
+    // let fd=new FormData();
+    // fd.append('name','lee');
+
+    // let xhr=new XMLHttpRequest();
+    // xhr.open('POST','http://www.liulongbin.top:3006/api/formdata');
+    // xhr.send(fd);
+    // xhr.onreadystatechange=function(){
+    //     console.log(xhr.responseText);
+    // }
+
+    //formdata 填充表单案例 
+    // let form=document.querySelector('#form-1');
+    // form.addEventListener('submit',function(e){
+    //     e.preventDefault();
+    //     let fd=new FormData(form);
+    //     let xhr=new XMLHttpRequest();
+    //     xhr.open('POST','http://www.liulongbin.top:3006/api/formdata');
+    //     xhr.setRequestHeader('Content-Type','application/x-www-form-urluncoded');
+    //     xhr.send(fd);
+    //     xhr.onreadystatechange=function(){
+    //         console.log(xhr.responseText);
+    //     }
+    // })
+    </script>
+    </body>
+</html>
