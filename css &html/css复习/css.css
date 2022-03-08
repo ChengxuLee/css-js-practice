@@ -1,0 +1,10 @@
+@import url(./base.css);
+/* h1~h1{  //选择所有兄弟 
+      color: red;
+} */
+/* h1+h1{   //只选择最近的兄弟
+    color: red;
+} */
+/* div{
+    color: red;
+} */

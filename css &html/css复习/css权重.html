@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 权重  !important>行内 1000>id 100> class 10> 标签 1 >通配符 0 */
+        body>.first{   11
+            color: red;
+        }
+       .first{    10     
+            color: green; 
+        } 
+    </style>
+</head>
+<body>
+    <!-- 继承是没有权重的 有些属性没有继承 -->
+    <div class="first">111<div class="second">222</div></div>
+    
+</body>
+</html>

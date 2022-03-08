@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a:visited {
+        color: green;
+      }
+      a:hover {
+        color: yellow;
+      }
+      a:active {
+        color: red;
+      }
+      a:link {
+        color: blue;
+      }
+      input:focus {
+        background-color: red;
+      }
+
+      /* 伪类选择根 :root==html 伪类选择空 :empty*/
+      /* :root {
+            color: red;
+        }
+        :empty{
+            display: none;
+        } */
+
+      /* ul li:first-child{
+            color:red;
+        } */
+      /* ul>li:first-of-type{
+            color:red;
+        } */
+
+      /* 倒数的第3个 */
+      /* ul > li:nth-last-of-type(3) {
+        color: red;
+      } */
+      /* 从第二个开始 */
+      /* ul li:nth-child(n+3){
+        color: red;
+      } */
+      /* 倒数三个 :not 排除掉可连续写*/
+      /* ul li:nth-last-child(-n+3):not(:nth-last-child(2)){
+        color: red;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <a href="#select">点我跳转到目标位置</a>
+    <div style="height:800px;">我是a标签</div>
+    <span id="select">我是目标位置</span> -->
+    <!-- <input type="text" > -->
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+  </body>
+</html>
